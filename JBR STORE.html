@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBR STORE | Elegance is a Lifestyle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --main: #000; --accent: #f9f9f9; --text-muted: #666; }
+        body { font-family: 'Cairo', sans-serif; margin: 0; background: #fff; color: var(--main); scroll-behavior: smooth; }
+        
+        /* Promo Banner */
+        .promo-bar { background: var(--main); color: #fff; text-align: center; padding: 12px; font-size: 13px; letter-spacing: 1px; font-weight: bold; }
+
+        /* Header */
+        header { background: #fff; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo-container img { height: 70px; object-fit: contain; }
+        .cart-trigger { font-size: 24px; cursor: pointer; position: relative; }
+        .cart-count { position: absolute; top: -8px; right: -12px; background: #d10000; color: #fff; font-size: 11px; padding: 2px 7px; border-radius: 50%; }
+
+        /* Hero Section */
+        .hero { height: 45vh; background: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 60px); margin-bottom: 10px; letter-spacing: 4px; text-transform: uppercase; }
+        .hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; line-height: 1.6; font-style: italic; }
+
+        /* Product Grid */
+        .shop { padding: 60px 8%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { border: 1px solid #eee; transition: all 0.4s ease; position: relative; background: #fff; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        
+        /* ضبط مقاس الصور */
+        .img-container { width: 100%; height: 450px; overflow: hidden; background: #f9f9f9; }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.08); }
+
+        .info { padding: 25px; text-align: center; }
+        .info h3 { font-size: 19px; margin-bottom: 8px; letter-spacing: 1px; }
+        .price { font-size: 20px; font-weight: 700; color: #000; margin-bottom: 15px; display: block; }
+
+        /* Selectors */
+        .controls { padding: 0 10px; }
+        label { display: block; font-size: 11px; color: #aaa; margin-bottom: 5px; text-transform: uppercase; font-weight: bold; }
+        select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #eee; font-family: 'Cairo'; background: #fff; cursor: pointer; }
+        
+        .buy-btn { background: #000; color: #fff; border: 1px solid #000; padding: 15px; width: 100%; font-weight: bold; cursor: pointer; transition: 0.3s; letter-spacing: 1px; }
+        .buy-btn:hover { background: #fff; color: #000; }
+
+        /* Checkout Form */
+        .checkout { padding: 80px 8%; background: #fafafa; }
+        .form-card { max-width: 550px; margin: 0 auto; background: #fff; padding: 40px; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+        .form-card h2 { text-align: center; margin-bottom: 30px; font-family: 'Playfair Display', serif; font-size: 32px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #eee; background: #fff; box-sizing: border-box; font-family: 'Cairo'; font-size: 15px; }
+        .confirm-btn { background: #000; color: #fff; border: none; width: 100%; padding: 20px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .confirm-btn:hover { opacity: 0.8; }
+
+        footer { padding: 40px 8%; text-align: center; background: #fff; border-top: 1px solid #eee; color: #888; font-size: 13px; line-height: 2; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 35px; } .shop { padding: 40px 5%; } }
+    </style>
+</head>
+<body>
+
+    <div class="promo-bar">🚚 توصيل مجاني خلال 3 أيام للقاهرة والجيزة</div>
+
+    <header>
+        <div class="logo-container">
+            <img src="./logo.png.jpeg" alt="JBR STORE">
+        </div>
+        <div class="cart-trigger" onclick="document.getElementById('booking').scrollIntoView()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>JBR STORE</h1>
+        <p>"Elegance isn't just about clothes… it's a lifestyle."</p>
+    </section>
+
+    <section class="shop" id="shop">
+        <div class="grid">
+            
+            <div class="card">
+                <div class="img-container">
+                    <img src="./p1.jpg.jpeg" alt="Splash Series">
+                </div>
+                <div class="info">
+                    <h3>JBR Splash Sweatpants</h3>
+                    <span class="price">700 EGP</span>
+                    <div class="controls">
+                        <label>Select Color</label>
+                        <select id="c1">
+                            <option>Gray</option><option>Black</option><option>Dark Gray</option>
+                        </select>
+                        <label>Select Size</label>
+                        <select id="s1">
+                            <option>M</option><option>L</option><option>XL</option><option>2XL</option>
+                        </select>
+                        <button class="buy-btn" onclick="add('Splash Sweatpants', 'c1', 's1')">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="./p2.jpg.jpeg" alt="Classic Series">
+                </div>
+                <div class="info">
+                    <h3>JBR Classic Minimalist</h3>
+                    <span class="price">700 EGP</span>
+                    <div class="controls">
+                        <label>Select Color</label>
+                        <select id="c2">
+                            <option>Black</option><option>Gray</option><option>Coffee</option>
+                        </select>
+                        <label>Select Size</label>
+                        <select id="s2">
+                            <option>M</option><option>L</option><option>XL</option><option>2XL</option>
+                        </select>
+                        <button class="buy-btn" onclick="add('Classic Minimalist', 'c2', 's2')">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img-container">
+                    <img src="./p3.jpg.jpeg" alt="Premium Series">
+                </div>
+                <div class="info">
+                    <h3>JBR Premium Collection</h3>
+                    <span class="price">700 EGP</span>
+                    <div class="controls">
+                        <label>Select Color</label>
+                        <select id="c3">
+                            <option>Beige</option><option>Coffee</option><option>Dark Gray</option>
+                        </select>
+                        <label>Select Size</label>
+                        <select id="s3">
+                            <option>M</option><option>L</option><option>XL</option><option>2XL</option>
+                        </select>
+                        <button class="buy-btn" onclick="add('Premium Collection', 'c3', 's3')">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="checkout" id="booking">
+        <div class="form-card">
+            <h2>Order Details</h2>
+            <form id="orderForm">
+                <input type="text" id="name" placeholder="الاسم الكامل" required>
+                <input type="tel" id="phone" placeholder="رقم الهاتف" required>
+                <textarea id="address" rows="3" placeholder="العنوان بالتفصيل" required></textarea>
+                <div id="summary" style="margin-bottom:20px; font-weight:bold; background:#f9f9f9; padding:20px; border:1px solid #eee; font-size: 14px;">السلة فارغة</div>
+                <button type="submit" class="confirm-btn">CONFIRM ORDER VIA WHATSAPP</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>JBR STORE</strong></p>
+        <p>Customer Support: 01154627432 | 1050544862</p>
+        <p>&copy; 2024 JBR STORE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function add(name, colorId, sizeId) {
+            const color = document.getElementById(colorId).value;
+            const size = document.getElementById(sizeId).value;
+            cart.push({name, color, size, price: 700});
+            update();
+            alert(`✅ تمت إضافة ${name} لسلتك`);
+        }
+
+        function update() {
+            document.getElementById('cartCount').innerText = cart.length;
+            const s = document.getElementById('summary');
+            if(cart.length > 0) {
+                let html = "المنتجات المختارة: <br><hr style='border:0; border-top:1px solid #ddd; margin:10px 0;'>";
+                cart.forEach((i, index) => html += `${index+1}. ${i.name} - ${i.color} [${i.size}] <br>`);
+                html += `<hr style='border:0; border-top:1px solid #ddd; margin:10px 0;'>الإجمالي: ${cart.length * 700} EGP`;
+                s.innerHTML = html;
+            }
+        }
+
+        document.getElementById('orderForm').onsubmit = function(e) {
+            e.preventDefault();
+            if(cart.length === 0) { alert("من فضلك أضف منتجات للسلة أولاً!"); return; }
+
+            const n = document.getElementById('name').value;
+            const p = document.getElementById('phone').value;
+            const a = document.getElementById('address').value;
+            
+            let list = cart.map(i => `- ${i.name} (${i.color} / ${i.size})`).join('\n');
+            const msg = `طلب جديد من JBR STORE 🛒\n----------------------\nالاسم: ${n}\nالهاتف: ${p}\nالعنوان: ${a}\n----------------------\nالطلبات:\n${list}\n----------------------\nالإجمالي: ${cart.length * 700} EGP\nشكرًا لاختياركم JBR!`;
+
+            window.open(`https://wa.me/201154627432?text=${encodeURIComponent(msg)}`, '_blank');
+        };
+    </script>
+</body>
+</html>
+<div class="size-guide-container" style="direction: rtl; font-family: 'Cairo', sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; border: 1px solid #eee; border-radius: 15px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+    
+    <h3 style="text-align: center; margin-bottom: 20px; font-size: 22px; color: #000; border-bottom: 2px solid #000; padding-bottom: 10px;">
+        <i class="fa-solid fa-ruler-combined"></i> جدول المقاسات - سويت بانتس ميلتون
+    </h3>
+
+    <table style="width: 100%; border-collapse: collapse; text-align: center; font-size: 16px;">
+        <thead>
+            <tr style="background-color: #f8f8f8; border-bottom: 2px solid #eee;">
+                <th style="padding: 15px; border: 1px solid #eee;">المقاس</th>
+                <th style="padding: 15px; border: 1px solid #eee;">الطول</th>
+                <th style="padding: 15px; border: 1px solid #eee;">العرض</th>
+                <th style="padding: 15px; border: 1px solid #eee;">الوزن المناسب</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">L</td>
+                <td style="padding: 15px; border: 1px solid #eee;">103 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee;">56 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee; color: #666;">65 : 80 كجم</td>
+            </tr>
+            <tr style="background-color: #fcfcfc;">
+                <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">XL</td>
+                <td style="padding: 15px; border: 1px solid #eee;">106 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee;">60 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee; color: #666;">80 : 95 كجم</td>
+            </tr>
+            <tr>
+                <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">2XL</td>
+                <td style="padding: 15px; border: 1px solid #eee;">109 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee;">64 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee; color: #666;">95 : 110 كجم</td>
+            </tr>
+            <tr style="background-color: #fcfcfc;">
+                <td style="padding: 15px; border: 1px solid #eee; font-weight: bold;">3XL</td>
+                <td style="padding: 15px; border: 1px solid #eee;">112 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee;">68 سم</td>
+                <td style="padding: 15px; border: 1px solid #eee; color: #666;">110 : 130 كجم</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin-top: 20px; padding: 15px; background: #fff9e6; border-radius: 10px; font-size: 13px; color: #856404; text-align: right; line-height: 1.8;">
+        <strong><i class="fa-solid fa-circle-info"></i> ملاحظات عند القياس:</strong><br>
+        1- قياس الطول من منطقة الوسط حتى الأسفل.<br
+        2- قياس العرض من أسفل الجيب كما هو موضح بالرسم.<br>
+        3- لو مقاسك بين مقاسين، دائماً اختار <b>المقاس الأكبر</b> لتلبيس مريح.
+    </div>
+</div>
