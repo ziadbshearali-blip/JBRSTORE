@@ -153,7 +153,7 @@
         <div class="form-card">
             <h2>Order Details</h2>
             <form id="orderForm">
-                <input type="text" id="name" placeholder="الاسم الكامل" required>
+                <input type="text" id="name" placeholder="الاسم الكامل" required>3
                 <input type="tel" id="phone" placeholder="رقم الهاتف" required>
                 <textarea id="address" rows="3" placeholder="العنوان بالتفصيل" required></textarea>
                 <div id="summary" style="margin-bottom:20px; font-weight:bold; background:#f9f9f9; padding:20px; border:1px solid #eee; font-size: 14px;">السلة فارغة</div>
@@ -201,7 +201,7 @@
             let list = cart.map(i => `- ${i.name} (${i.color} / ${i.size})`).join('\n');
             const msg = `طلب جديد من JBR STORE 🛒\n----------------------\nالاسم: ${n}\nالهاتف: ${p}\nالعنوان: ${a}\n----------------------\nالطلبات:\n${list}\n----------------------\nالإجمالي: ${cart.length * 700} EGP\nشكرًا لاختياركم JBR!`;
 
-            window.open(`https://wa.me/201154627432?text=${encodeURIComponent(msg)}`, '_blank');
+            window.open(`https://wa.me/201037682775?text=${encodeURIComponent(msg)}`, '_blank');
         };
     </script>
 </body>
